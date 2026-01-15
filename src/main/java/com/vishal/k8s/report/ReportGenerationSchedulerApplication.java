@@ -9,7 +9,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableScheduling
-public class ReportGenerationSchedulerApplication {//implements CommandLineRunner {
+public class ReportGenerationSchedulerApplication implements CommandLineRunner {
 
 	@Autowired
 	private ReportGenerationScheduler scheduler;
@@ -18,9 +18,9 @@ public class ReportGenerationSchedulerApplication {//implements CommandLineRunne
 		SpringApplication.run(ReportGenerationSchedulerApplication.class, args);
 	}
 
-//	@Override
-//	public void run(String... args) throws Exception {
-//		scheduler.generateReportAndSendEmail();
-//	}
+	@Override
+	public void run(String... args) throws Exception {
+		scheduler.generateReportAndSendEmail();
+	}
 
 }
